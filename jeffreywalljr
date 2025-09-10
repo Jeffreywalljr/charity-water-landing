@@ -1,3 +1,7 @@
+charity-water-landing/
+├── index.html
+├── assets/
+│   └── hero.jpg 
 <!doctype html>
 <html lang="en">
 <head>
