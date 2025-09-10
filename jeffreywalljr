@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Charity: Water — Student Campaign</title>
   <meta name="description" content="Clean Water. Real Impact. Powered by Students. Every $40 brings clean water to one person.">
-  <!-- Google Fonts (clean, modern) -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -21,11 +20,8 @@
       font-family:"Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       color:var(--brand-black);
       background: #ffffff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       line-height:1.5;
     }
-
     header{
       display:flex;
       align-items:center;
@@ -39,31 +35,24 @@
       align-items:center;
       font-family:"Montserrat",sans-serif;
       font-weight:700;
-      letter-spacing:0.6px;
       font-size:18px;
     }
     .logo .mark{
       width:36px;height:36px;border-radius:8px;background:var(--brand-yellow);
       display:inline-grid;place-items:center;font-weight:700;color:var(--brand-black)
     }
-
     main{
       max-width:var(--max-width);
       margin:28px auto;
       padding:0 20px;
     }
-
     .hero{
       display:grid;
       grid-template-columns: 1fr 440px;
       gap:28px;
       align-items:center;
     }
-
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr; padding-bottom: 12px;}
-    }
-
+    @media (max-width:900px){ .hero{grid-template-columns:1fr; padding-bottom:12px;} }
     .hero-copy{
       background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.9));
       padding:28px;
@@ -85,12 +74,7 @@
       line-height:1.05;
       color:var(--brand-black);
     }
-    p.lead{
-      margin:0 0 18px;
-      font-size:16px;
-      color:#333;
-    }
-
+    p.lead{margin:0 0 18px;font-size:16px;color:#333;}
     .impact-pill{
       display:inline-block;
       background:var(--brand-yellow);
@@ -101,7 +85,6 @@
       margin-bottom:18px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     }
-
     .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:10px}
     .btn{
       display:inline-flex;
@@ -129,7 +112,6 @@
       padding:11px 16px;
       font-weight:600;
     }
-
     .hero-media{
       border-radius:12px;
       overflow:hidden;
@@ -142,8 +124,6 @@
       object-fit:cover;
       min-height:300px;
     }
-
-    /* FEATURES / BENEFITS */
     .grid-3{
       display:grid;
       grid-template-columns: repeat(3,1fr);
@@ -151,7 +131,6 @@
       margin-top:26px;
     }
     @media (max-width:900px){ .grid-3{grid-template-columns:1fr} }
-
     .card{
       background:var(--brand-gray);
       padding:18px;
@@ -165,8 +144,6 @@
       margin-bottom:8px;
     }
     .card p{margin:0;color:#333}
-
-    /* FOOTER / EXTRA */
     footer{
       margin-top:28px;
       padding:20px;
@@ -174,8 +151,6 @@
       color:#555;
       font-size:14px;
     }
-
-    /* Donation modal (simple) */
     .modal-backdrop{
       position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;padding:20px;z-index:80;
     }
@@ -185,185 +160,144 @@
     .amounts{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
     .amounts button{background:#f2f2f2;border:1px solid #e6e6e6;padding:8px 12px;border-radius:10px;cursor:pointer}
     .donate-row{display:flex;gap:10px;align-items:center}
-
-    /* share-draft area */
     .share-draft{
       margin-top:22px;
       background:#fffbe6;border:1px solid #fff0b3;padding:12px;border-radius:10px;color:#333;
     }
-    .visually-hidden{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo" aria-hidden="true">
-      <div class="mark">cw</div>
-      <div>
-        charity: water — Student Campaign
+<header>
+  <div class="logo" aria-hidden="true">
+    <div class="mark">cw</div>
+    <div>charity: water — Student Campaign</div>
+  </div>
+  <nav aria-label="Main navigation">
+    <a class="btn btn-ghost" href="#impact">Why it matters</a>
+    <button class="btn btn-ghost" id="open-donate">Donate</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" role="region" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <div class="kicker">For the Activist Student</div>
+      <h1 id="hero-title">Clean Water. Real Impact. Powered by Students.</h1>
+      <div class="impact-pill" aria-hidden="true">$40 = clean water for 1 person</div>
+      <p class="lead">College students make movements. Join thousands rallying to end the global water crisis — quick, meaningful actions that create real impact.</p>
+      <ul>
+        <li><strong>Hope-driven:</strong> Focused on solutions, not guilt.</li>
+        <li><strong>Actionable:</strong> Easy ways to donate, fundraise, or start campus events.</li>
+        <li><strong>Shareable:</strong> Built to be shared across socials.</li>
+      </ul>
+      <div class="cta-row">
+        <button class="btn btn-primary" id="donateBtn">Donate $40</button>
+        <a class="btn btn-ghost" href="#start-fundraiser">Start a campus fundraiser</a>
+      </div>
+      <div class="share-draft" aria-label="LinkedIn share draft">
+        <strong>LinkedIn post draft</strong>
+        <p style="margin:8px 0 0;font-size:14px">
+          "This week I designed a landing page for charity: water, a nonprofit dedicated to bringing clean and safe drinking water to people around the world. I learned how important it is to align messaging with a specific audience — in this case, college students — and how to combine brand guidelines, emotional visuals, and clear CTAs to inspire action. It was powerful to work on a project that connects digital marketing skills with real-world impact. Excited to keep learning and creating more purpose-driven campaigns!"
+        </p>
       </div>
     </div>
+    <div class="hero-media" role="img" aria-label="Student drinking clean water, smiling">
+      <img src="assets/hero.jpg" alt="Student smiling while drinking a glass of clean water. Replace this file with your hero image.">
+    </div>
+  </section>
 
-    <nav aria-label="Main navigation">
-      <a class="btn btn-ghost" href="#why">Why it matters</a>
-      <a class="btn btn-ghost" href="#impact">Impact</a>
-      <button class="btn btn-ghost" id="open-donate">Donate</button>
-    </nav>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero" role="region" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <div class="kicker">For the Activist Student</div>
-        <h1 id="hero-title">Clean Water. Real Impact. Powered by Students.</h1>
-        <div class="impact-pill" aria-hidden="true">$40 = clean water for 1 person</div>
-
-        <p class="lead">College students make movements. Join thousands of students rallying to end the global water crisis — quick, meaningful actions that create real, measurable impact.</p>
-
-        <ul>
-          <li><strong>Hope-driven:</strong> We focus on solutions, not guilt.</li>
-          <li><strong>Actionable:</strong> Easy ways to donate, fundraise, or start a campus event.</li>
-          <li><strong>Shareable:</strong> Built to be shared with peers and across socials.</li>
-        </ul>
-
-        <div class="cta-row" style="margin-top:16px">
-          <button class="btn btn-primary" id="donateBtn">Donate $40</button>
-          <a class="btn btn-ghost" href="#start-fundraiser">Start a campus fundraiser</a>
-        </div>
-
-        <div class="share-draft" aria-label="LinkedIn share draft">
-          <strong>LinkedIn post draft</strong>
-          <p style="margin:8px 0 0;font-size:14px">
-            "This week I designed a landing page for charity: water, a nonprofit dedicated to bringing clean and safe drinking water to people around the world. I learned how important it is to align messaging with a specific audience — in this case, college students — and how to combine brand guidelines, emotional visuals, and clear CTAs to inspire action. It was powerful to work on a project that connects digital marketing skills with real-world impact. Excited to keep learning and creating more purpose-driven campaigns!"
-          </p>
-        </div>
-
+  <section id="impact" aria-labelledby="impact-title" style="margin-top:24px">
+    <h2 id="impact-title" style="font-family:'Montserrat',sans-serif;font-weight:700;margin:0 0 12px;font-size:20px">Why it matters</h2>
+    <div class="grid-3" role="list">
+      <div class="card" role="listitem">
+        <div class="stat">771M people</div>
+        <p>Still lack access to clean water. Students can move the needle with small donations and big voice.</p>
       </div>
-
-      <div class="hero-media" role="img" aria-label="Student drinking clean water, smiling">
-        <!-- Replace 'assets/hero.jpg' with your hero image path (e.g. hero.jpg) -->
-        <img src="assets/hero.jpg" alt="Student smiling while drinking a glass of clean water. Replace this file with your hero image.">
+      <div class="card" role="listitem">
+        <div class="stat">$40</div>
+        <p>Average cost to bring clean water to one person.</p>
       </div>
-    </section>
-
-    <!-- IMPACT & FEATURES -->
-    <section id="impact" aria-labelledby="impact-title" style="margin-top:24px">
-      <h2 id="impact-title" style="font-family:'Montserrat',sans-serif;font-weight:700;margin:0 0 12px;font-size:20px">Why it matters</h2>
-      <div class="grid-3" role="list">
-        <div class="card" role="listitem">
-          <div class="stat">771M people</div>
-          <p>Still lack access to clean water. Students can move the needle with small donations and big voice.</p>
-        </div>
-        <div class="card" role="listitem">
-          <div class="stat">$40</div>
-          <p>Average cost to bring clean water to one person in a community.</p>
-        </div>
-        <div class="card" role="listitem">
-          <div class="stat">Campus-ready</div>
-          <p>Tools and easy steps to start a campus fundraiser in under an hour.</p>
-        </div>
+      <div class="card" role="listitem">
+        <div class="stat">Campus-ready</div>
+        <p>Tools and easy steps to start a campus fundraiser in under an hour.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PLACEHOLDER: where you'd show more content -->
-    <section id="start-fundraiser" style="margin-top:26px">
-      <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;margin-bottom:10px">Start a campus fundraiser</h3>
-      <p>Quick starter plan: 1) Pick a date 2) Set a goal (e.g., $1,200 = 30 people) 3) Create a 1-minute pitch for your chapter & share on socials.</p>
-      <div style="margin-top:10px">
-        <a class="btn btn-primary" href="#" onclick="alert('Use Canva template + campaign brief to create your page. Replace hero image and CTA.');return false;">Get the starter pack</a>
-      </div>
-    </section>
+  <section id="start-fundraiser" style="margin-top:26px">
+    <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;margin-bottom:10px">Start a campus fundraiser</h3>
+    <p>Quick starter plan: 1) Pick a date 2) Set a goal 3) Create a 1-minute pitch & share on socials.</p>
+    <a class="btn btn-primary" href="#" onclick="alert('Use Canva template + campaign brief. Replace hero image & CTA.');return false;">Get the starter pack</a>
+  </section>
+</main>
 
-  </main>
-
-  <!-- Donation Modal -->
-  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal" role="document">
-      <h2 style="margin-top:0;font-family:'Montserrat',sans-serif">Donate to charity: water</h2>
-      <p style="margin:6px 0 12px">Choose an amount to give — be the difference for one person today.</p>
-
-      <div class="amounts" role="group" aria-label="preset donation amounts">
-        <button data-amount="5">$5</button>
-        <button data-amount="20">$20</button>
-        <button data-amount="40">$40</button>
-        <button data-amount="100">$100</button>
-      </div>
-
-      <label for="other" style="font-size:13px;display:block;margin-top:6px">Other amount</label>
-      <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
-        <input id="other" type="number" min="1" placeholder="Enter $ amount" style="flex:1;padding:10px;border-radius:8px;border:1px solid #ddd;">
-        <button class="btn btn-primary" id="confirmDonate">Donate</button>
-      </div>
-
-      <p id="donate-feedback" aria-live="polite" style="margin-top:12px;color:#333"></p>
-
-      <div style="text-align:right;margin-top:12px">
-        <button class="btn btn-ghost" id="closeModal">Close</button>
-      </div>
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal" role="document">
+    <h2 style="margin-top:0;font-family:'Montserrat',sans-serif">Donate to charity: water</h2>
+    <p style="margin:6px 0 12px">Choose an amount — be the difference for one person today.</p>
+    <div class="amounts" role="group" aria-label="preset donation amounts">
+      <button data-amount="5">$5</button>
+      <button data-amount="20">$20</button>
+      <button data-amount="40">$40</button>
+      <button data-amount="100">$100</button>
+    </div>
+    <label for="other" style="font-size:13px;display:block;margin-top:6px">Other amount</label>
+    <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+      <input id="other" type="number" min="1" placeholder="Enter $ amount" style="flex:1;padding:10px;border-radius:8px;border:1px solid #ddd;">
+      <button class="btn btn-primary" id="confirmDonate">Donate</button>
+    </div>
+    <p id="donate-feedback" aria-live="polite" style="margin-top:12px;color:#333"></p>
+    <div style="text-align:right;margin-top:12px">
+      <button class="btn btn-ghost" id="closeModal">Close</button>
     </div>
   </div>
+</div>
 
-  <footer>
-    <small>Designed for demo / educational purposes. Replace images & copy with charity: water brand assets from the campaign brief before final submission.</small>
-  </footer>
+<footer>
+  <small>Designed for demo / educational purposes. Replace images & copy with charity: water brand assets before final submission.</small>
+</footer>
 
-  <script>
-    // Accessibility helpers + simple donation simulation
-    const modal = document.getElementById('modal');
-    const openDonate = document.getElementById('open-donate');
-    const donateBtn = document.getElementById('donateBtn');
-    const closeModal = document.getElementById('closeModal');
-    const feedback = document.getElementById('donate-feedback');
-    const confirmDonate = document.getElementById('confirmDonate');
-    const amounts = document.querySelectorAll('.amounts button');
-    const otherInput = document.getElementById('other');
+<script>
+  const modal = document.getElementById('modal');
+  const openDonate = document.getElementById('open-donate');
+  const donateBtn = document.getElementById('donateBtn');
+  const closeModal = document.getElementById('closeModal');
+  const feedback = document.getElementById('donate-feedback');
+  const confirmDonate = document.getElementById('confirmDonate');
+  const amounts = document.querySelectorAll('.amounts button');
+  const otherInput = document.getElementById('other');
 
-    function showModal(){
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden','false');
-      otherInput.value = '';
-      feedback.textContent = '';
-      otherInput.focus();
-    }
-    function hideModal(){
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden','true');
-    }
+  function showModal(){
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden','false');
+    otherInput.value = '';
+    feedback.textContent = '';
+    otherInput.focus();
+  }
+  function hideModal(){
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden','true');
+  }
 
-    openDonate.addEventListener('click', showModal);
-    donateBtn.addEventListener('click', showModal);
-    closeModal.addEventListener('click', hideModal);
-    modal.addEventListener('click', (e) => {
-      if(e.target === modal) hideModal();
-    });
+  openDonate.addEventListener('click', showModal);
+  donateBtn.addEventListener('click', showModal);
+  closeModal.addEventListener('click', hideModal);
+  modal.addEventListener('click', (e) => { if(e.target===modal) hideModal(); });
 
-    // preset amount click
-    amounts.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const amt = btn.getAttribute('data-amount');
-        otherInput.value = amt;
-        otherInput.focus();
-      });
-    });
+  amounts.forEach(btn=>{
+    btn.addEventListener('click',()=>{ otherInput.value=btn.dataset.amount; otherInput.focus(); });
+  });
 
-    confirmDonate.addEventListener('click', () => {
-      const val = parseFloat(otherInput.value || 0);
-      if(!val || val <= 0){ feedback.textContent = 'Please enter a valid amount.'; feedback.style.color='#b00020'; otherInput.focus(); return; }
-      feedback.style.color = '#0b6623';
-      feedback.textContent = `Thanks — your $${val.toFixed(2)} donation is simulated for this demo. (Replace this with a real payments integration.)`;
-      // In a real build: submit to server or stripe here.
-      // simulate close after 2s
-      setTimeout(hideModal, 1700);
-    });
+  confirmDonate.addEventListener('click', ()=>{
+    const val=parseFloat(otherInput.value||0);
+    if(!val||val<=0){ feedback.textContent='Please enter a valid amount.'; feedback.style.color='#b00020'; otherInput.focus(); return; }
+    feedback.style.color='#0b6623';
+    feedback.textContent=`Thanks — your $${val.toFixed(2)} donation is simulated for this demo.`;
+    setTimeout(hideModal,1700);
+  });
 
-    // keyboard accessibility for modal (ESC to close)
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && modal.style.display === 'flex') hideModal();
-    });
-
-    // Ensure hero images have meaningful alt text - reminder for user
-    // console.info('Reminder: replace assets/hero.jpg with your hero image (student drinking water).');
-  </script>
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && modal.style.display==='flex') hideModal(); });
+</script>
 </body>
 </html>
